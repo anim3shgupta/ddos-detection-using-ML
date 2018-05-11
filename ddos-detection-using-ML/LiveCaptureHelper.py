@@ -28,8 +28,21 @@ def IG_NB(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for IG_NB are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
     
 def IG_SVM(window_dataframe):
@@ -49,8 +62,21 @@ def IG_SVM(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for IG_SVM are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
     
 def IG_DT(window_dataframe):
@@ -70,8 +96,21 @@ def IG_DT(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for IG_DT are: ")
-    print(predictions)
+
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
     
 def IG_RF(window_dataframe):
@@ -91,10 +130,22 @@ def IG_RF(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for IG_RF are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
-
 
 def Chi2_NB(window_dataframe):
     header_list = window_dataframe.columns.values
@@ -113,8 +164,21 @@ def Chi2_NB(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for Chi2_NB are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def Chi2_SVM(window_dataframe):
@@ -134,8 +198,21 @@ def Chi2_SVM(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for Chi2_SVM are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def Chi2_DT(window_dataframe):
@@ -155,8 +232,21 @@ def Chi2_DT(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for Chi2_DT are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def Chi2_RF(window_dataframe):
@@ -176,8 +266,21 @@ def Chi2_RF(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for Chi2_RF are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 
@@ -199,8 +302,21 @@ def RFE_NB(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for RFE_NB are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
     
 def RFE_SVM(window_dataframe):
@@ -220,8 +336,21 @@ def RFE_SVM(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for RFE_SVM are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def RFE_DT(window_dataframe):
@@ -241,8 +370,21 @@ def RFE_DT(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for RFE_DT are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def RFE_RF(window_dataframe):
@@ -262,8 +404,21 @@ def RFE_RF(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for RFE_RF are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def WRFS_NB(window_dataframe):
@@ -283,8 +438,21 @@ def WRFS_NB(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for WRFS_NB are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def WRFS_SVM(window_dataframe):
@@ -304,8 +472,21 @@ def WRFS_SVM(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for WRFS_SVM are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def WRFS_DT(window_dataframe):
@@ -325,8 +506,21 @@ def WRFS_DT(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for WRFS_DT are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 def WRFS_RF(window_dataframe):
@@ -346,8 +540,21 @@ def WRFS_RF(window_dataframe):
     
     testSet_values = window_array.tolist()
     predictions = (model.predict(testSet_values)).tolist()
-    print("The predicted values for WRFS_RF are: ")
-    print(predictions)
+    
+    #Categorizing windows as attack windows or normal windows
+    normal_packets = 0
+    attack_packets = 0
+    for value in predictions:
+        if(value == 'normal.'):
+            normal_packets = normal_packets + 1
+        else:
+            attack_packets = attack_packets + 1
+    if (attack_packets >= 50):
+        print("Attack Window")
+        predictions = ['attack']
+    else:
+        print("Normal Window")
+        predictions = ['normal']
     return (predictions)
 
 

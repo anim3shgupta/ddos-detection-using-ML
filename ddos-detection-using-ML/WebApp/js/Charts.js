@@ -18,7 +18,7 @@ function createCharts(msg, selection){
     data.addColumn('number', 'Class');
     
     for (var i = 0; i < msg.length; i++) { 
-      if (msg[i] == 'normal.')
+      if (msg[i] == 'normal')
         data.addRow([i, 0]);
       else
         data.addRow([i, 1]);   
@@ -71,7 +71,7 @@ function createCharts(msg, selection){
     var attackPackets = 0;
 
     for (var i = 0; i < msg.length; i++) {
-      if (msg[i] == 'normal.')
+      if (msg[i] == 'normal')
         normalPackets = normalPackets + 1;
       else
         attackPackets = attackPackets + 1;

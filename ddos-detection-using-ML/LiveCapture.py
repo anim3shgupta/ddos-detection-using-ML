@@ -20,12 +20,14 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
 import time, multiprocessing
+import time
 
 PATH = os.getcwd()
 app = Flask(__name__)    
 CORS(app)
 
 data = 0
+attack_threshold = 50
 
 feature = ['duration', 'protocol_type', 'service', 'flag','src_bytes','dst_bytes','land','wrong_fragment','urgent','count','srv_count','serror_rate','srv_serror_rate','rerror_rate','srv_rerror_rate','same_srv_rate','diff_srv_rate','srv_diff_host_rate'
 ,'dst_host_count','dst_host_srv_count','dst_host_same_srv_rate','dst_host_diff_srv_rate','dst_host_same_src_port_rate','dst_host_srv_diff_host_rate'
@@ -143,10 +145,12 @@ def main(featureAlgorithm, classification,a):
     #Read the live CSV and pass it to the create_window function to create a window of 100 packets and classify the packets
     global data
     i=0
-    while (data == 0): 
+    while (data == 0):
+        start_time = time.time()
         window_dataframe = create_window(i)    
         if(featureAlgorithm == 1 and classification == 1):
             predictions = LiveCaptureHelper.IG_NB(window_dataframe)
+            print("Time to create and predict the window: ", "--- %s seconds ---" % (time.time() - start_time))
             a.extend(predictions)
         elif(featureAlgorithm == 1 and classification == 2):
             predictions = LiveCaptureHelper.IG_SVM(window_dataframe)
